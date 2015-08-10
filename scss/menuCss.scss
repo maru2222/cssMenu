@@ -25,6 +25,24 @@
 }//keyFramesCode
 
 // ==================================== mixin Style End
+
+$default_TextColor:#575757;
+$default_BackColor:#f7f7f7;
+
+$active_TextColor:#fff;
+$active_BackColor:#197ae5;
+
+$active_defaultTextColor:$active_TextColor;
+$active_defaultBackColor:$active_BackColor;
+
+$subA_TextColor:$active_TextColor;
+$subA_BackColor:$active_BackColor;
+
+//$subA_activeTextColor:;
+//$subA_activeBackColor:;
+
+
+
 a{
   text-decoration: none;
 }
@@ -49,7 +67,7 @@ a{
     float: left;
     width: 140px;
     position: relative;
-    background: #00aaff;
+    background: $default_BackColor;
     z-index: 50;
   }//sideMenu
 }//contents
@@ -58,7 +76,7 @@ a{
   
   @include keyframes(active){
     from{
-      opacity: .85;
+      opacity: 1;
     }
     to{
       opacity: 1;
@@ -70,23 +88,29 @@ a{
       //@include transition(1s all ease 0s);
       
       &:hover{
-        background: #bbaa00;
-      }
+        background: $active_defaultBackColor;
+        
+        a{
+          color: $active_defaultTextColor;
+        }
+        
+      }//hover
       
       a{
         display: block;
-        padding: 10px;
-        color: azure;
+        padding: 15px 10px;
+        color: $default_TextColor;
 
         & + .subMenu{
           display: none;
         }//subMenu
         
         &:hover{
-          background: #3311ff;
-          
+          background:$active_BackColor;
+          color:$active_TextColor;
+           
           & + .subMenu{
-            background: #000055;
+            background: $subA_BackColor;
             display: block;
             @include animation(active 0.2s linear 0s);
             
@@ -98,13 +122,14 @@ a{
       }//a
       
       .subMenu{
-        background: #0000ff;
+        background: $subA_BackColor;
         position: absolute;
         top: 0;
         width: 400px;
         left: 139px;
         z-index: 100;
-        color: #fff;
+        color: $subA_TextColor;
+        @include box-shadow(rgba(52, 63, 77, 0.568627) 6px 6px 13px -5px);
         
         &:hover{
           display: block;
@@ -113,9 +138,10 @@ a{
         ul{
           li{
             a{
-              color: #fff;
+              color: $subA_TextColor;
               &:hover{
                 color: #f5f50f;
+                background: lighten($subA_BackColor , 10%);
               }//hover
             }//a
           }//li

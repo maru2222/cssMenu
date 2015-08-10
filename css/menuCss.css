@@ -77,13 +77,13 @@ a {
   float: left;
   width: 140px;
   position: relative;
-  background: #00aaff;
+  background: #f7f7f7;
   z-index: 50;
 }
 
 @-webkit-keyframes active {
   from {
-    opacity: .85;
+    opacity: 1;
   }
   to {
     opacity: 1;
@@ -91,7 +91,7 @@ a {
 }
 @-moz-keyframes active {
   from {
-    opacity: .85;
+    opacity: 1;
   }
   to {
     opacity: 1;
@@ -99,7 +99,7 @@ a {
 }
 @-ms-keyframes active {
   from {
-    opacity: .85;
+    opacity: 1;
   }
   to {
     opacity: 1;
@@ -107,28 +107,32 @@ a {
 }
 @keyframes active {
   from {
-    opacity: .85;
+    opacity: 1;
   }
   to {
     opacity: 1;
   }
 }
 .sideMenu ul li:hover {
-  background: #bbaa00;
+  background: #197ae5;
+}
+.sideMenu ul li:hover a {
+  color: #fff;
 }
 .sideMenu ul li a {
   display: block;
-  padding: 10px;
-  color: azure;
+  padding: 15px 10px;
+  color: #575757;
 }
 .sideMenu ul li a + .subMenu {
   display: none;
 }
 .sideMenu ul li a:hover {
-  background: #3311ff;
+  background: #197ae5;
+  color: #fff;
 }
 .sideMenu ul li a:hover + .subMenu {
-  background: #000055;
+  background: #197ae5;
   display: block;
   -moz-animation: active 0.2s linear 0s;
   -webkit-animation: active 0.2s linear 0s;
@@ -138,13 +142,16 @@ a {
   background: #f00;
 }
 .sideMenu ul li .subMenu {
-  background: #0000ff;
+  background: #197ae5;
   position: absolute;
   top: 0;
   width: 400px;
   left: 139px;
   z-index: 100;
   color: #fff;
+  -moz-box-shadow: rgba(52, 63, 77, 0.56863) 6px 6px 13px -5px;
+  -webkit-box-shadow: rgba(52, 63, 77, 0.56863) 6px 6px 13px -5px;
+  box-shadow: rgba(52, 63, 77, 0.56863) 6px 6px 13px -5px;
 }
 .sideMenu ul li .subMenu:hover {
   display: block;
@@ -154,6 +161,7 @@ a {
 }
 .sideMenu ul li .subMenu ul li a:hover {
   color: #f5f50f;
+  background: #4694eb;
 }
 .sideMenu ul li .koukoku {
   position: absolute;
