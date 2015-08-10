@@ -1,0 +1,171 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contents {
+  overflow: hidden;
+  width: 920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.contents .mainArea {
+  float: right;
+  width: 760px;
+  background: #f4f4f4;
+  min-height: 850px;
+  box-sizing: border-box;
+  padding: 24px;
+}
+.contents .sideMenu {
+  float: left;
+  width: 140px;
+  position: relative;
+  background: #00aaff;
+  z-index: 50;
+}
+
+@-webkit-keyframes active {
+  from {
+    opacity: .85;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes active {
+  from {
+    opacity: .85;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-ms-keyframes active {
+  from {
+    opacity: .85;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes active {
+  from {
+    opacity: .85;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.sideMenu ul li:hover {
+  background: #bbaa00;
+}
+.sideMenu ul li a {
+  display: block;
+  padding: 10px;
+  color: azure;
+}
+.sideMenu ul li a + .subMenu {
+  display: none;
+}
+.sideMenu ul li a:hover {
+  background: #3311ff;
+}
+.sideMenu ul li a:hover + .subMenu {
+  background: #000055;
+  display: block;
+  -moz-animation: active 0.2s linear 0s;
+  -webkit-animation: active 0.2s linear 0s;
+  animation: active 0.2s linear 0s;
+}
+.sideMenu ul li a:hover + .subMenu .koukoku {
+  background: #f00;
+}
+.sideMenu ul li .subMenu {
+  background: #0000ff;
+  position: absolute;
+  top: 0;
+  width: 400px;
+  left: 139px;
+  z-index: 100;
+  color: #fff;
+}
+.sideMenu ul li .subMenu:hover {
+  display: block;
+}
+.sideMenu ul li .subMenu ul li a {
+  color: #fff;
+}
+.sideMenu ul li .subMenu ul li a:hover {
+  color: #f5f50f;
+}
+.sideMenu ul li .koukoku {
+  position: absolute;
+  top: 0;
+  left: 200px;
+  background: #f5f50f;
+  color: #333;
+  width: 200px;
+  height: auto;
+}
+
+footer {
+  width: 920px;
+  margin: 0 auto;
+}

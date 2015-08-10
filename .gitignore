@@ -1,2 +1,4 @@
 .sass-cache
 *.css.map
+scss/_compass.bat
+scss/config.rb

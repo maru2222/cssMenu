@@ -1,0 +1,142 @@
+@import "compass";
+@import "compass/reset";
+@import "compass/css3";
+@import "ceaser-easing";
+
+
+// ceaser-easing https://github.com/jhardy/compass-ceaser-easing
+// ==================================== mixin Style start 
+
+@mixin keyframes($names){
+
+  @-webkit-keyframes #{$names} {
+    @content;
+  }
+  @-moz-keyframes #{$names} {
+    @content;
+  }
+  @-ms-keyframes #{$names} {
+    @content;
+  }
+  @keyframes #{$names} {
+    @content;
+  }
+  
+}//keyFramesCode
+
+// ==================================== mixin Style End
+a{
+  text-decoration: none;
+}
+
+.contents{
+  overflow: hidden;
+  width: 920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  
+  .mainArea{
+    float: right;
+    width: 760px;
+    background: #f4f4f4;
+    min-height: 850px;
+    box-sizing: border-box;
+    padding: 24px;
+  }//mainArea
+  
+  .sideMenu{
+    float: left;
+    width: 140px;
+    position: relative;
+    background: #00aaff;
+    z-index: 50;
+  }//sideMenu
+}//contents
+
+.sideMenu{
+  
+  @include keyframes(active){
+    from{
+      opacity: .85;
+    }
+    to{
+      opacity: 1;
+    }
+  }//keyframes
+  
+  ul{
+    li{
+      //@include transition(1s all ease 0s);
+      
+      &:hover{
+        background: #bbaa00;
+      }
+      
+      a{
+        display: block;
+        padding: 10px;
+        color: azure;
+
+        & + .subMenu{
+          display: none;
+        }//subMenu
+        
+        &:hover{
+          background: #3311ff;
+          
+          & + .subMenu{
+            background: #000055;
+            display: block;
+            @include animation(active 0.2s linear 0s);
+            
+            .koukoku{
+              background: #f00;
+            }//koukoku
+          }//subMenu
+        }//hover
+      }//a
+      
+      .subMenu{
+        background: #0000ff;
+        position: absolute;
+        top: 0;
+        width: 400px;
+        left: 139px;
+        z-index: 100;
+        color: #fff;
+        
+        &:hover{
+          display: block;
+        }//hover
+        
+        ul{
+          li{
+            a{
+              color: #fff;
+              &:hover{
+                color: #f5f50f;
+              }//hover
+            }//a
+          }//li
+        }//ul
+      }//subMenu
+      
+      .koukoku{
+        position: absolute;
+        top: 0;
+        left: 200px;
+        background: #f5f50f;
+        color: #333;
+        width: 200px;
+        height: auto;
+      }//koukoku
+
+    }//li
+  }//ul
+}//sideMenu
+
+footer{
+  width: 920px;
+  margin: 0 auto;
+}//footer
