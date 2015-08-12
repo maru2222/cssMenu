@@ -139,7 +139,9 @@ a {
   animation: active 0.2s linear 0s;
 }
 .sideMenu ul li a:hover + .subMenu .koukoku {
-  background: #f00;
+  background: #2af;
+  color: #fff;
+  height: 100%;
 }
 .sideMenu ul li .subMenu {
   background: #197ae5;
@@ -168,12 +170,9 @@ a {
   top: 0;
   left: 200px;
   background: #f5f50f;
-  color: #333;
+  color: #555;
   width: 200px;
-  height: auto;
-}
-
-footer {
-  width: 920px;
-  margin: 0 auto;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px;
 }

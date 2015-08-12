@@ -1,10 +1,9 @@
-@import "compass";
+//@import "compass";
 @import "compass/reset";
 @import "compass/css3";
-@import "ceaser-easing";
-
-
+//@import "ceaser-easing";
 // ceaser-easing https://github.com/jhardy/compass-ceaser-easing
+
 // ==================================== mixin Style start 
 
 @mixin keyframes($names){
@@ -24,7 +23,8 @@
   
 }//keyFramesCode
 
-// ==================================== mixin Style End
+
+// ==================================== Color Control
 
 $default_TextColor:#575757;
 $default_BackColor:#f7f7f7;
@@ -41,7 +41,7 @@ $subA_BackColor:$active_BackColor;
 //$subA_activeTextColor:;
 //$subA_activeBackColor:;
 
-
+// ==================================== page Style start
 
 a{
   text-decoration: none;
@@ -85,7 +85,6 @@ a{
   
   ul{
     li{
-      //@include transition(1s all ease 0s);
       
       &:hover{
         background: $active_defaultBackColor;
@@ -115,7 +114,9 @@ a{
             @include animation(active 0.2s linear 0s);
             
             .koukoku{
-              background: #f00;
+              background: #2af;
+              color: #fff;
+              height: 100%;
             }//koukoku
           }//subMenu
         }//hover
@@ -153,16 +154,13 @@ a{
         top: 0;
         left: 200px;
         background: #f5f50f;
-        color: #333;
+        color: #555;
         width: 200px;
-        height: auto;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 10px
       }//koukoku
 
     }//li
   }//ul
 }//sideMenu
-
-footer{
-  width: 920px;
-  margin: 0 auto;
-}//footer
