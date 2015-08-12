@@ -1,8 +1,28 @@
-//@import "compass";
-@import "compass/reset";
 @import "compass/css3";
-//@import "ceaser-easing";
-// ceaser-easing https://github.com/jhardy/compass-ceaser-easing
+
+// ==================================== Color Control
+
+$default_TextColor:#575757;
+$default_BackColor:#f7f7f7;
+
+$active_TextColor:#fff;
+$active_BackColor:#197ae5;
+
+$active_defaultTextColor:$active_TextColor;
+$active_defaultBackColor:$active_BackColor;
+
+$subA_TextColor:$active_TextColor;
+$subA_BackColor:$active_BackColor;
+
+$subA_activeTextColor:#f5f50f;
+$subA_activeBackColor:lighten($subA_BackColor , 10%);
+
+
+// ==================================== Width Control
+$sideMenuWidth:140px;
+$subMenuWidth:400px;
+$koukokuAreaWidth:200px;
+
 
 // ==================================== mixin Style start 
 
@@ -23,23 +43,6 @@
   
 }//keyFramesCode
 
-
-// ==================================== Color Control
-
-$default_TextColor:#575757;
-$default_BackColor:#f7f7f7;
-
-$active_TextColor:#fff;
-$active_BackColor:#197ae5;
-
-$active_defaultTextColor:$active_TextColor;
-$active_defaultBackColor:$active_BackColor;
-
-$subA_TextColor:$active_TextColor;
-$subA_BackColor:$active_BackColor;
-
-//$subA_activeTextColor:;
-//$subA_activeBackColor:;
 
 // ==================================== page Style start
 
@@ -65,7 +68,7 @@ a{
   
   .sideMenu{
     float: left;
-    width: 140px;
+    width: $sideMenuWidth;
     position: relative;
     background: $default_BackColor;
     z-index: 50;
@@ -92,7 +95,6 @@ a{
         a{
           color: $active_defaultTextColor;
         }
-        
       }//hover
       
       a{
@@ -126,8 +128,9 @@ a{
         background: $subA_BackColor;
         position: absolute;
         top: 0;
-        width: 400px;
-        left: 139px;
+        left: $sideMenuWidth - 1;
+        width: $subMenuWidth;
+        height: auto;
         z-index: 100;
         color: $subA_TextColor;
         @include box-shadow(rgba(52, 63, 77, 0.568627) 6px 6px 13px -5px);
@@ -140,25 +143,30 @@ a{
           li{
             a{
               color: $subA_TextColor;
+              
               &:hover{
-                color: #f5f50f;
-                background: lighten($subA_BackColor , 10%);
+                color: $subA_activeTextColor;
+                background: $subA_activeBackColor;
               }//hover
             }//a
           }//li
         }//ul
       }//subMenu
       
+      .nokoukoku {
+        width: $subMenuWidth - $koukokuAreaWidth;
+      }
+      
       .koukoku{
         position: absolute;
         top: 0;
-        left: 200px;
+        left: $koukokuAreaWidth;
         background: #f5f50f;
         color: #555;
-        width: 200px;
+        width: $koukokuAreaWidth;
         height: 100%;
         box-sizing: border-box;
-        padding: 10px
+        padding: 10px;
       }//koukoku
 
     }//li
