@@ -19,7 +19,7 @@ $subA_activeBackColor:lighten($subA_BackColor , 10%);
 
 
 // ==================================== Width Control
-$sideMenuWidth:140px;
+$sideMenuWidth:180px;
 $subMenuWidth:400px;
 $koukokuAreaWidth:200px;
 
@@ -52,14 +52,14 @@ a{
 
 .contents{
   overflow: hidden;
-  width: 920px;
+  width: 960px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
   
   .mainArea{
     float: right;
-    width: 760px;
+    width: 740px;
     background: #f4f4f4;
     min-height: 850px;
     box-sizing: border-box;
@@ -100,6 +100,7 @@ a{
       a{
         display: block;
         padding: 15px 10px;
+        box-sizing: border-box;
         color: $default_TextColor;
 
         & + .subMenu{
@@ -127,10 +128,11 @@ a{
       .subMenu{
         background: $subA_BackColor;
         position: absolute;
-        top: 0;
+        //top: 0;
         left: $sideMenuWidth - 1;
         width: $subMenuWidth;
         height: auto;
+        margin-top: -46px;
         z-index: 100;
         color: $subA_TextColor;
         @include box-shadow(rgba(52, 63, 77, 0.568627) 6px 6px 13px -5px);
@@ -141,14 +143,57 @@ a{
         
         ul{
           li{
+            //position: relative;
+            
             a{
               color: $subA_TextColor;
+              display: block;
+              width: 100%;
+              padding: 15px 10px;
               
               &:hover{
                 color: $subA_activeTextColor;
                 background: $subA_activeBackColor;
               }//hover
+              
             }//a
+            
+              &.box{
+                display: block;
+                overflow: hidden;
+                
+                a{
+                  display: block;
+                  //background: #ff9900;
+                  float: left;
+                }//a
+                
+                & > a{
+                  &:after{
+                    content: ">";
+                    margin-left: 25px;
+                  }
+                }
+                
+                &:hover{
+                  background: #01aa01;
+                  
+                  ul{
+                    width: 180px;
+                    position: absolute;
+                    display: block;
+                    float: left;
+                    background: #01aa01;
+                    margin-left: 199px;
+                    @include box-shadow(rgba(52, 63, 77, 0.568627) 6px 6px 13px -5px);
+                  }//ul
+                }//hover
+              }//box
+            
+            ul{
+              display: none;
+            }//ul
+            
           }//li
         }//ul
       }//subMenu
