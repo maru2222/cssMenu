@@ -9,6 +9,13 @@ a {
   position: relative;
   z-index: 1;
 }
+.contents .head {
+  width: 960px;
+  margin: 0 auto 24px;
+  background: #f4f4f4;
+  box-sizing: border-box;
+  padding: 24px;
+}
 .contents .mainArea {
   float: right;
   width: 740px;
@@ -114,31 +121,42 @@ a {
   color: #f5f50f;
   background: #4694eb;
 }
-.sideMenu ul li .subMenu ul li.box {
+.sideMenu ul li .subMenu ul li.thirdMenu {
   display: block;
   overflow: hidden;
 }
-.sideMenu ul li .subMenu ul li.box a {
+.sideMenu ul li .subMenu ul li.thirdMenu a {
   display: block;
   float: left;
 }
-.sideMenu ul li .subMenu ul li.box > a:after {
+.sideMenu ul li .subMenu ul li.thirdMenu > a:after {
   content: ">";
   margin-left: 25px;
-}
-.sideMenu ul li .subMenu ul li.box:hover {
+  color: #fff;
   background: #01aa01;
 }
-.sideMenu ul li .subMenu ul li.box:hover ul {
+.sideMenu ul li .subMenu ul li.thirdMenu:hover {
+  background: #01aa01;
+}
+.sideMenu ul li .subMenu ul li.thirdMenu:hover ul {
   width: 180px;
   position: absolute;
   display: block;
   float: left;
+  color: #fff;
   background: #01aa01;
   margin-left: 199px;
   -moz-box-shadow: rgba(52, 63, 77, 0.56863) 6px 6px 13px -5px;
   -webkit-box-shadow: rgba(52, 63, 77, 0.56863) 6px 6px 13px -5px;
   box-shadow: rgba(52, 63, 77, 0.56863) 6px 6px 13px -5px;
+}
+.sideMenu ul li .subMenu ul li.thirdMenu:hover ul li a {
+  color: #fff;
+  background: #01aa01;
+}
+.sideMenu ul li .subMenu ul li.thirdMenu:hover ul li a:hover {
+  color: #f5f50f;
+  background: #01c301;
 }
 .sideMenu ul li .subMenu ul li ul {
   display: none;
